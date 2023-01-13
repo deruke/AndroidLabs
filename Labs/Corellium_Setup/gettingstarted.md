@@ -50,6 +50,6 @@ In this section we will cover two options for establishing remote network capabi
 
 ### SSH ###
 1. Create a unique SSH keypair (public and private certificates) from your MobileApp VM:
- a. From the command prompt, type the following command and hit enter.
+ * From the command prompt, type the following command and hit enter.
 
 ### VPN ###
