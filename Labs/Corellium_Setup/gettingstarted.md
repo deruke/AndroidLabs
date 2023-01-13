@@ -42,3 +42,14 @@ The following list contains a high-level description of each menu item.
  * Console – Use the Console option to see system and kernel logs and quickly run commands without needing to connect over ADB or SSH.
  * Sensors
  * Snapshots
+
+## Remotely Connecting to your Virtual Mobile Device ##
+
+Establishing a network connection between your mobile device and your testing platform is required to perform actions such as proxying and intercepting Internet traffic, which enables security practitioners to further evaluate a given mobile application under an active/running state. Additionally, tools like the Android Debugger (adb) can be leveraged remotely from the tester’s virtual machine to the virtual mobile device running in Corellium. 
+In this section we will cover two options for establishing remote network capabilities to/from your MobileApp Virtual Machine and the virtual mobile device running in Corellium: SSH and VPN.
+
+### SSH ###
+1. Create a unique SSH keypair (public and private certificates) from your MobileApp VM:
+ a. From the command prompt, type the following command and hit enter.
+
+### VPN ###
