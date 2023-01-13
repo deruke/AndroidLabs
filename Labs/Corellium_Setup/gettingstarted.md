@@ -31,5 +31,14 @@ The menu items associated with your Android device should look like the followin
 
 ![Device Menu Items](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/device-menu-options.jpg)
 
-A high-level description of each menu item is listed below.
+The following list contains a high-level description of each menu item.
  * Connect - This feature allows the tester to remotely connect to the virtual Android device for testing. 
+ * Files – Corellium gives you control over the device filesystem, allowing you to upload, download, delete, modify, and search for files.
+ * Apps – Manage Apps installed on the virtual device (i.e., install/uninstall, launch/kill apps).
+ * Network – The Network Monitor captures, presents, and monitors HTTPS traffic, transparently defeating certificate pinning.  
+ * CoreTrace:
+ * Settings
+ * Frida
+ * Console – Use the Console option to see system and kernel logs and quickly run commands without needing to connect over ADB or SSH.
+ * Sensors
+ * Snapshots
