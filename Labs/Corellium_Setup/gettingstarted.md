@@ -50,6 +50,21 @@ In this section we will cover two options for establishing remote network capabi
 
 ### SSH ###
 1. Create a unique SSH keypair (public and private certificates) from your MobileApp VM:
-    a. From the command prompt, type the following command and hit enter.
+    - From the command prompt, type the following command and hit enter.
+    `ssh-keygen -t ed25519`
+    - For the file name, enter “sshKey”, then hit enter.
+    - Hit enter two more times to create the key with no passphrase.
+    - The keypair should now be in your CWD (current working directory – to confirm, type the command ‘ls’ and you should see two files
+        - sshKey – this is your private key and should remain on your MobileApp VM.
+        - sshKey.pub – this is your public certificate, the contents of which will need to be added to your Corellium instance.
+
+2. Type the following command to display the contents of sshKey.pub to stdout of your terminal.
+`cat sshKey.pub`
 
 ### VPN ###
+
+An alternative approach to SSH for remote connectivity is to use a VPN. Corellium offers support for VPN connections via an OpenVPN configuration which is obtained via the Corellium web UI. The Corellium VPN enables us to remotely route network traffic from the virtual mobile device, through our MobileApp VM. From the MobileApp VM, we can then perform network traffic inspection and intercept/manipulate the traffic using tools like Burp Suite.
+
+1.	To begin, navigate back to the Corellium web UI and access your virtual mobile device. Then click on the **Connect** tab.
+NOTE: Ensure that your virtual device is powered on.
+2. Scroll down to the **Connect via VPN** section and click **DOWNLOAD OVPN FILE**.
