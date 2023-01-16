@@ -66,37 +66,52 @@ In this section we will cover two options for establishing remote network capabi
 An alternative approach to SSH for remote connectivity is to use a VPN. Corellium offers support for VPN connections via an OpenVPN configuration which is obtained via the Corellium web UI. The Corellium VPN enables us to remotely route network traffic from the virtual mobile device, through our MobileApp VM. From the MobileApp VM, we can then perform network traffic inspection and intercept/manipulate the traffic using tools like Burp Suite.
 
 1.	To begin, navigate back to the Corellium web UI and access your virtual mobile device. Then click on the **Connect** tab.
+
 NOTE: Ensure that your virtual device is powered on.
 
 2. Scroll down to the **Connect via VPN** section and click **DOWNLOAD OVPN FILE**.
+
 ![Download OVPN File](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/download-openvpn.jpg)
 
 3. Save the downloaded OVPN file to a directory/location on the MobileApp VM.
+
 ![Downloaded OVPN File](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/openvpn-local.jpg)
 
 4. Prior to establishing the VPN, run the following command from a terminal session on your MobileApp VM to get a current list of network interfaces.
+
 `ip a`
+
  - The following screen capture provides an example of the list of network interfaces.
+
  ![List of Interfaces](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/list-interfaces.jpg)
 
 NOTE: Your output may not match exactly – the key takeaway here is understanding the current network interfaces prior to establishing the VPN.
 
 5. Next, run the following command from a terminal session on your MobileApp VM.
+
 `sudo openvpn corellium.com\ VPN\ -\ Default\ Project.ovpn`
+
  - We can see from the below output that OpenVPN created a new network interface, **tap0**, with the IP address: **10.11.3.2**
+
 ![tap0 interface](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/tap0-interface.jpg)
 
 NOTE: The IP address assigned to the tap0 interface may be different. Additionally, each time the VPN is established there is a possibility that the assigned IP may change.
 
 6. Run the `ip` command once again to see the tap0 interface and the currently assigned IP address.
+
 `ip a`
+
 ![tap0 interface assigned IP](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/tap0-interface-w-IP.jpg)
 
 7. Test the VPN connection by navigating back to Corellium’s web UI and selecting the **Console** tab. Then enter the following command in the console shell.
+
 `ping` *tap0 assigned IP*
+
 ![corellium console - ping tap interface](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/corellium-console-ping.jpg)
 
 8. While the ping command is running in the console session, return to the MobileApp VM and execute the following *tcpdump* command. 
 `tcpdump -nni tap0`
+
  - In the screen capture below, we can see that the virtual mobile device (10.11.0.3) and our MobileApp VM (10.11.3.2) are communicating over a private network connection.
+
  ![tcpdump attached to tap0 interface](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/tcpdump-tap0.jpg)
