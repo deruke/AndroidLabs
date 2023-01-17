@@ -36,12 +36,12 @@ The following list contains a high-level description of each menu item.
  * Files – Corellium gives you control over the device filesystem, allowing you to upload, download, delete, modify, and search for files.
  * Apps – Manage Apps installed on the virtual device (i.e., install/uninstall, launch/kill apps).
  * Network – The Network Monitor captures, presents, and monitors HTTPS traffic, transparently defeating certificate pinning.  
- * CoreTrace:
- * Settings
- * Frida
+ * CoreTrace - Ability to trace system calls for dynamic analysis and reverse engineering which offers a quick way to understand a program’s behavior. 
+ * Settings - Configuration settings for your virtual device, such as: number of CPU cores, allocated RAM, as well as custom boot and kernel options.  
+ * Frida - Corellium's bulit-in Frida server to support process hooking and code injection for bypassing controls and/or reverse engineering purposes.
  * Console – Use the Console option to see system and kernel logs and quickly run commands without needing to connect over ADB or SSH.
- * Sensors
- * Snapshots
+ * Sensors - Configure your virual device's peripherals and sensors, such as: Battery status, Camera/Microphone, GPS coordinates, and Motion/Position/Orientation.
+ * Snapshots - Save, clone, or restore your device's virtual state. 
 
 ## Remotely Connecting to your Virtual Mobile Device ##
 
