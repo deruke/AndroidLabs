@@ -95,7 +95,7 @@ NOTE: Your output may not match exactly – the key takeaway here is understandi
 
 ![tap0 interface](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/tap0-interface.jpg)
 
-NOTE: The IP address assigned to the tap0 interface may be different. Additionally, each time the VPN is established there is a possibility that the assigned IP may change.
+NOTE: The IP address assigned to the tap0 interface may be different. <ins>Additionally, each time the VPN is established there is a possibility that the assigned IP may change</ins>.
 
 6. Run the `ip` command once again to see the tap0 interface and the currently assigned IP address.
 
