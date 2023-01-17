@@ -105,7 +105,7 @@ NOTE: The IP address assigned to the tap0 interface may be different. Additional
 
 7. Test the VPN connection by navigating back to Corellium’s web UI and selecting the **Console** tab. Then enter the following command in the console shell.
 
-`ping` *tap0 assigned IP*
+`ping <tap0 assigned IP>`
 
 ![corellium console - ping tap interface](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/corellium-console-ping.jpg)
 
