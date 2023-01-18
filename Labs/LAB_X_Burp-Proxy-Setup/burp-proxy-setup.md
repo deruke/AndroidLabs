@@ -24,13 +24,13 @@ In order to ensure network traffic is routed from the virtual mobile device to o
 
 5. Next click **Add**, then **Bind to address**, and select the IP address assigned to the **tap0** interface. Also, enter the port number in the **Bind to port** field, then click **OK**.   
 
+ ![Burp Proxy Configuration](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-configure-listener-1.jpg)
+
  NOTE: The address assigned to your **tap0** interface may be different. To ensure you select the correct IP for Burp to bind to, run the following command from a terminal session on your MobileApp VM.
  `ip a show tap0`
  
  ![tap0 interface](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/tap0-interface.jpg)
-
- ![Burp Proxy Configuration](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-configure-listener-1.jpg)
-
+ 
  6. You should now have an active listener in Burp.
 
  ![Burp Proxy Configuration](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-proxy-options.jpg)
