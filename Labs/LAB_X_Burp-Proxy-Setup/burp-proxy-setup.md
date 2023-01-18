@@ -6,12 +6,13 @@ In order to ensure network traffic is routed from the virtual mobile device to o
 ## Open and Configure Burp
 1. With a VPN connection established, return to your MobileApp VM and launch Burp Suite Community Edition by either running to following command or clicking on the Burp icon in the Favorites Toolbar.
  
- - Option 1: Launch Burp via the command line.
-   `/home/mobileapp/BurpSuiteCommunity/BurpSuiteCommunity &`
+  Option 1: Launch Burp via the command line.
+   
+  `/home/mobileapp/BurpSuiteCommunity/BurpSuiteCommunity &`
 
- - Option 2: Launch Burp via the Favorites Toolbar.
+  Option 2: Launch Burp via the Favorites Toolbar.
 
- ![Launch Burp Suite](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-temp-project-1.jpg)
+  ![Launch Burp Suite](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-temp-project-1.jpg)
 
 2. Select **Temporary project**, then click **Next**
 
@@ -21,8 +22,13 @@ In order to ensure network traffic is routed from the virtual mobile device to o
 
 4. Uncheck the "Running" checkbox for interface 127.0.0.1:8080
 
-5. Next click **Add**, then **Bind to address**, and select the IP address assigned to the tap0 interface. Also, enter the port number in the **Bind to port** field. An example configuration is shown below.  NOTE: The address assigned to your tap0 interface may be different.
+5. Next click **Add**, then **Bind to address**, and select the IP address assigned to the **tap0** interface. Also, enter the port number in the **Bind to port** field, then click **OK**.   
+
+ NOTE: The address assigned to your **tap0** interface may be different. To ensure you select the correct IP for Burp to bind to, run the following command from a terminal session on your MobileApp VM.
+ `ip a show tap0`
  
+ ![tap0 interface](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/tap0-interface.jpg)
+
  ![Burp Proxy Configuration](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-configure-listener-1.jpg)
 
  6. You should now have an active listener in Burp.
