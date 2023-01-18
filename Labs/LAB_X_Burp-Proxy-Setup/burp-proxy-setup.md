@@ -22,18 +22,60 @@ In order to ensure network traffic is routed from the virtual mobile device to o
 
 4. Uncheck the "Running" checkbox for interface 127.0.0.1:8080
 
-5. Next click **Add**, then **Bind to address**, and select the IP address assigned to the **tap0** interface. Also, enter the port number in the **Bind to port** field, then click **OK**.   
+5. Next click **Add**, then **Bind to address -> Specific address**, and select the IP address assigned to the **tap0** interface. Also, enter the port number in the **Bind to port** field, then click **OK**.   
 
  ![Burp Proxy Configuration](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-configure-listener-1.jpg)
 
  NOTE: The address assigned to your **tap0** interface may be different. To ensure you select the correct IP for Burp to bind to, run the following command from a terminal session on your MobileApp VM.
+ 
  `ip a show tap0`
  
  ![tap0 interface](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/tap0-interface.jpg)
- 
+
  6. You should now have an active listener in Burp.
 
  ![Burp Proxy Configuration](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-proxy-options.jpg)
+
+You now have Burp's proxy setup and listening for incoming connections. In the next section of this lab, we will walk through the configuration of the virtual mobile device in Corellium.
+
+## Configuring the Virtual Mobile Device's Proxy Settings
+
+1.  Navigate back to the Corellium web UI and access your virtual mobile device.
+
+2. On the virtual mobile device, navigate to **Settings -> Network & internet**.
+
+![Network and Internet](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/internet-proxy-settings.jpg)
+
+3. Select **Internet**
+
+![Internet](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/internet-proxy-settings-1.jpg)
+
+4. Click on the *gear* icon of the *T-Mobile* connection.
+
+![T-Mobile](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/internet-proxy-settings-2.jpg)
+
+5. Under the settings for the *T-Mobile* interface, scroll down and select **Access Point Names**
+
+![APN Select](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/apn-select.jpg)
+
+6. Select the **T-Mobile US** APN.
+
+![APN Select](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/apn.jpg)
+
+7. Click on the **Proxy** and **Port** fields and enter the value matching Burp's proxy settings. 
+
+![APN Set](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/apn-proxy-save.jpg)
+
+8. Select the epsilon in the top-right corner and click **Save**
+
+![APN Save](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/apn-save.jpg)
+
+**IMPORTANT:** If you don't save here, you will need to repeat the previous step(s)
+
+9. Navigate back to **Settings -> Network & internet -> Internet** and select the icon at the top-right corner to reset the network interface.
+
+![Reset Interface](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/reset-interfaces.jpg)
+
 
 ## Configure the Virtual Mobile Device's Certificate Trust for the Burp Proxy Certifcate Authority (CA) - User-Trust
 
@@ -41,7 +83,7 @@ The following steps will walk you through the installation of Burp's CA certific
 
 **IMPORTANT:** Starting with Nougat (Android 7.0 - API level 24) certificates installed to the User-Trust store are ignored by default; however, with Corellium's implementation of Android devices, some naitive applications have been "patched" to trust the user cert store. If you are using a different mobile device solution for testing, Android devivces 7.0+ (API >= 24) will require the Burp CA cert to be installed to the System-Trust store (see XXX Lab for adding Burp's CA to the System-Trust on Android devices).  
 
-1.  
+1.  Navigate back to the Corellium web UI and access your virtual mobile device.
 
 
 
