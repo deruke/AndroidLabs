@@ -127,7 +127,43 @@ Install a certificate -> CA Certificate:
 
 ![Install a CA certificate](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/cert-installed.jpg)
 
-8. 
+8. A prompt will warn you of the dangers involved with installing a CA certificate...click **INSTALL ANYWAY** to proceed.
+
+![Install a CA certificate](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/security-settings-cert-install-1.jpg)
+
+9. Next, click the *Hamburger* icon and select **Downloads**, then click on the Burp certificate you uploaded in step 4.
+
+![Select Certificate from Downloads](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/security-settings-cert-install-2.jpg)
+
+![Select Certificate from Downloads](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/security-settings-cert-install-3.jpg)
+
+![Select Certificate from Downloads](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/security-settings-cert-install-4.jpg)
+
+10. If successful, a temporary pop-up wil appear indicating *"CA certificate installed"*.
+
+![Select Certificate from Downloads](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/cert-installed-1.jpg)
+
+11. To verify that the certifcate was installed to the User-Trust store, navigate to **Settings -> Security -> Encryption & credentials -> Trusted credentials -> User**
+
+![Certificate Trust](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/cert-installed-2.jpg)
+
+![Certificate Trust](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/cert-installed-3.jpg)
+
+12. Launch the Web View app from the virtual device in Corellium and enter a common Internet resource, such as *https://www.google.com*.
+
+![Web View](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/webview-icon.jpg)
+
+![Google via Web View App](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/webview-google.jpg)
+
+13. Finally, navigate back to your MobileApp VM and from within Burp, navigate to **Proxy -> HTTP history**. 
+
+You should see your web traffic processed by Burp's proxy.
+
+![Burp Intercepted Web Traffic](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/webview-google-burp.jpg)
+
+
+
+
 
 
 
