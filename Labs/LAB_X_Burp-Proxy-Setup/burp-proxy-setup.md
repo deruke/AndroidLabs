@@ -161,8 +161,23 @@ You should see your web traffic processed by Burp's proxy.
 
 ![Burp Intercepted Web Traffic](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/webview-google-burp.jpg)
 
+### Not seeing traffic in Burp?
 
+Follow the below items to ensure all required steps have been taken:
 
+1. Ensure the VPN connection between Corellium and the MobileApp VM is established.
+
+2. Ensure the Burp proxy options (IP Address and Port) are properly set and the proxy is listening.
+
+3. Check the User-Trust store to ensure the CA certificate is installed.
+
+4. Check the proxy settings on the virtual mobile device to ensure they match that of the **tap0** interface as well as Burp's proxy settings.
+
+5. If everythihg checks out and still no luck:
+    - Reboot the virtual device
+    - Re-establish the VPN (off/on again)
+    - If the **tap0** interface receives a different IP than what was previously set in Burp: update the settings in Burp as well as the proxy settings on the device.
+    - Be sure to save the proxy settings on the virtual device 
 
 
 
