@@ -65,9 +65,11 @@ You now have Burp's proxy setup and listening for incoming connections. In the n
 7. Click on the **Proxy** and **Port** fields and enter the value matching Burp's proxy settings. Then select the *Kebab* icon in the top-right corner and click **Save**.
 
 Kebab Icon Location:
+
 ![APN Set](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/apn-proxy-save.jpg)
 
 Click Save:
+
 ![APN Save](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/apn-save.jpg)
 
 **IMPORTANT:** If you don't save here, you will need to repeat the previous step(s)
