@@ -91,11 +91,11 @@ The following steps will walk you through the installation of Burp's CA certific
 
 1. Return to your instance of Burp running on the MobileApp VM and navigate to: **Proxy -> Options** and click on **Import / export CA certificate**.
 
-![Export Burp CA Certificate](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-export-CA.jpg)
+![Export Burp CA Certificate](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-export-CA-cert.jpg)
 
 2. Select the **Certificate in DER format** and then click **Next**.
 
-![Export Burp CA as DER](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-export-cert-DER.jpg)
+![Export Burp CA as DER](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-export-cert-DER-format.jpg)
 
 3. Select a location to save the certifcate.
 
