@@ -68,24 +68,66 @@ Kebab Icon Location:
 
 ![APN Set](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/apn-proxy-save.jpg)
 
-Click Save:
+Click Save
 
 ![APN Save](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/apn-save.jpg)
 
-**IMPORTANT:** If you don't save here, you will need to repeat the previous step(s)
+**IMPORTANT:** If you don't save the proxy settings you will need to repeat the previous step(s)
 
-9. Navigate back to **Settings -> Network & internet -> Internet** and select the icon at the top-right corner to reset the network interface.
+9. Navigate back to **Settings -> Network & internet -> Internet** and select the icon at the top-right corner to reset the network interface. This will reset the virtual device's network interface which enables the proxy settings to be recognized by the device.
 
 ![Reset Interface](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/reset-interfaces.jpg)
+
+The Internet connection will cycle momentarily during this process.
+
+![Interface Resetting](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/internet-reset-interfaces.jpg)
 
 
 ## Configure the Virtual Mobile Device's Certificate Trust for the Burp Proxy Certifcate Authority (CA) - User-Trust
 
 The following steps will walk you through the installation of Burp's CA certificate to the User-Trust Store on your virtual mobile device in Corellium.
 
-**IMPORTANT:** Starting with Nougat (Android 7.0 - API level 24) certificates installed to the User-Trust store are ignored by default; however, with Corellium's implementation of Android devices, some naitive applications have been "patched" to trust the user cert store. If you are using a different mobile device solution for testing, Android devivces 7.0+ (API >= 24) will require the Burp CA cert to be installed to the System-Trust store (see XXX Lab for adding Burp's CA to the System-Trust on Android devices).  
+**IMPORTANT:** Starting with Nougat (Android 7.0 - API level 24) certificates installed to the User-Trust store are ignored by default; however, with Corellium's implementation of Android devices, some naitive applications have been "patched" to trust the user cert store. If you are using a different mobile device solution for testing, Android devivces 7.0+ (API >= 24) will require the Burp CA cert to be installed to the System-Trust store (see *XXX Lab* for adding Burp's CA to the System-Trust on Android devices).  
 
-1.  Navigate back to the Corellium web UI and access your virtual mobile device.
+1. Return to your instance of Burp running on the MobileApp VM and navigate to: **Proxy -> Options** and click on **Import / export CA certificate**.
+
+![Export Burp CA Certificate](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-export-CA.jpg)
+
+2. Select the **Certificate in DER format** and then click **Next**.
+
+![Export Burp CA as DER](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-export-cert-DER.jpg)
+
+3. Select a location to save the certifcate.
+
+![Save Burp Certificate](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-export-cert-filename.jpg)
+
+4. Go back to your Corellium instance and click **Files** in the menu, then navigate to **/mnt/sdcard/Download/** and upload the Burp CA file exported in the previous step.
+
+![Upload Certificate to Device](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-CA-cert-upload.jpg)
+
+![Upload Certificate to Device](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-CA-cert-upload-1.jpg)
+
+5. Return to the virtual mobile device's home screen (in Corellium) and select the **Settings** icon.
+
+Settings Icon:
+
+![Settings](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/settings-icon.jpg)
+
+6. Scroll down and select **Security** then find **Encryption & credentials** and select it.
+
+![Security - Encryption and Credentials](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/security-settings-enc-creds.jpg)
+
+7. Under **Encryption & credentials** click on **Install a certificate**, then click **CA certificate**
+
+Install a certificate:
+
+![Security - Encryption and Credentials](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/security-settings-cert-install.jpg)
+
+Install a certificate -> CA Certificate:
+
+![Install a CA certificate](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/cert-installed.jpg)
+
+8. 
 
 
 
