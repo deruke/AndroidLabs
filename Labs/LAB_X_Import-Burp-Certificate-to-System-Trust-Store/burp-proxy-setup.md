@@ -3,15 +3,45 @@ In this lab we will import and install Burp's CA certificate to the System-Trust
 
 **NOTE**: The mobile device must be rooted in order to install a CA certificate to the System-Trust store. We'll be utilzing a rooted Android device in Corellium for this lab.
 
-**IMPORTANT**: Starting with Nougat (Android 7.0 - API level 24) certificates installed to the User-Trust store are ignored by default; however, with Corellium's implementation of Android devices, some naitive applications have been "patched" to trust the user cert store. If you are using a different mobile device solution for testing, Android devivces 7.0+ (API >= 24) will require the Burp CA cert to be installed to the System-Trust store. Additionally, 3rd-party apps installed on a Corellium virtual mobile device may only trust CA certificates in the System-Trust store. 
+**IMPORTANT**: Starting with Nougat (Android 7.0 - API level 24) certificates installed to the User-Trust store are ignored by default; however, with Corellium's implementation of Android devices, some naitive applications have been "patched" to trust the user cert store. See [here](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/burp-proxy-setup.md#configure-the-virtual-mobile-devices-certificate-trust-for-the-burp-proxy-certifcate-authority-ca---user-trust) for instructions on how to add a CA certificate to the User-Trust store. 
+If you are using a different mobile device solution for testing, Android devivces 7.0+ (API >= 24) will require the Burp CA cert to be installed to the System-Trust store. Additionally, 3rd-party apps installed on a Corellium virtual mobile device may also require the Burp CA to be installed to the System-Trust store.
 
-(see XXX Lab for adding Burp's CA to the System-Trust on Android devices).
-
-https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/burp-proxy-setup.md#configure-the-virtual-mobile-devices-certificate-trust-for-the-burp-proxy-certifcate-authority-ca---user-trust
-
-In order to ensure network traffic is routed from the virtual mobile device to our MobileApp VM, a VPN connection between the two hosts is required. If you don't have a VPN connection established, rerfer to the [lab](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/gettingstarted.md#VPN) on how to setup a VPN connection.
+**NOTE**: In order to ensure network traffic is routed from the virtual mobile device to our MobileApp VM, a VPN connection between the two hosts is required. If you don't have a VPN connection established, rerfer to the [lab](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/gettingstarted.md#VPN) on how to setup a VPN connection before proceeding.
 
 ## Export Burp's CA Certficate and Prep for Install
-1. 
+1. Return to Burp and navigate to **Proxy -> Options** and click **Import/export CA certificate**.
+
+![Export Burp CA Certificate](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Import-Burp-Certificate-to-System-Trust-Store/images/burp-export-CA-cert-1.jpg)
+
+2. Select **Certificate in DER format**, then click **Next**
+
+![Export Burp CA Certificate - DER Format](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Import-Burp-Certificate-to-System-Trust-Store/images/burp-export-CA-DER-format.jpg)
+
+3. Save the file locally on the MobileApp VM.
+
+![Export Burp CA Certificate - Save File](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Import-Burp-Certificate-to-System-Trust-Store/images/burp-export-cert-filename.jpg)
+
+**NOTE**: The Android device requires the certificate to be in PEM format, and to have the filename equal to the `subject_hash_old` value appended with `.0` extension.
+
+4. From a terminal session, type the following `openssl` command to convert the certificate from DER to PEM.
+
+`openssl x509 -inform DER -in BurpCA.cer -out BurpCA.pem`
+
+![Export Burp CA Certificate - Save File](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Import-Burp-Certificate-to-System-Trust-Store/images/burp-convert-to-PEM.jpg)
+
+5. Use the `openssl` command once again to identify the `subject_hash_old` value.
+
+`openssl x509 -inform PEM -subject_hash_old -in BurpCA.pem | head -1`
+
+![Burp CA - subject_hash_old](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Import-Burp-Certificate-to-System-Trust-Store/images/burp-CA-subject-hash.jpg)
+
+6. Rename the pem-formated certificate to `<hash>.0`
+
+`mv BurpCA.pem 9a5ba575.0`
+
+![Burp CA - Rename](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Import-Burp-Certificate-to-System-Trust-Store/images/burp-CA-subject-hash-rename.jpg)
+
+## Importing the CA to the mobile device's System-Trust Store
+
 
 
