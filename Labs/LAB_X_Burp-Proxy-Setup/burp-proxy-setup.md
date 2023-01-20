@@ -175,7 +175,7 @@ Follow the below items to ensure all required steps have been taken:
 
 5. If everythihg checks out and still no luck:
     - Reboot the virtual device
-    - Re-establish the VPN (off/on again)
+    - Cycle the VPN connection (off/on again)
     - If the **tap0** interface receives a different IP than what was previously set in Burp: update the settings in Burp as well as the proxy settings on the device.
     - Be sure to save the proxy settings on the virtual device 
 
