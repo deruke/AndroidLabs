@@ -41,7 +41,7 @@ If you are using a different mobile device solution for testing, Android devivce
 
 ![Burp CA - Rename](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Import-Burp-Certificate-to-System-Trust-Store/images/burp-CA-subject-hash-rename.jpg)
 
-## Importing the CA to the mobile device's System-Trust Store
+## Importing the CA to the mobile device's System-Trust Store - via adb
 
-
-
+1. Connect to your virtual mobile device via `abd`.
+**NOTE**: See [here]("") 
