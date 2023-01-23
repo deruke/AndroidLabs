@@ -72,7 +72,7 @@ If you are using a different mobile device solution for testing, Android devivce
 
 5. Within the adb shell, run the `reboot` command and hit enter to reboot your virtual device.
 
-## Verify Certicate was added Successfully
+## Verify Certificate was added Successfully
 
 1. Return to your virtual device in Corellium and navigate to **Settings -> Security -> Encryption & credentials -> Trusted credentials -> System**. Then scroll down until you see *PortSwigger - PortSwiggerCA*.
 
