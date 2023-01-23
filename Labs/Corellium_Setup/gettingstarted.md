@@ -78,6 +78,39 @@ In this section we will cover two options for establishing remote network capabi
 
 #### Test the SSH Connection ####
 
+1. Ensure that your Corellium virtual device is powered on.
+
+![Device On](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/devices-on.jpg)
+
+2. Navigate to the **Connect** menu item and copy the first command listed under **Quick Connect**.
+
+![Connect - SSH](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/connect-ssh.jpg)
+
+3. Return to your MobileApp VM, then paste the command into a terminal session. The command will be slightly different for each student; however, be sure to add the `-i sshKey` at the end of the command you just pasted.
+
+![Connect - SSH Command](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/ssh-connect-command.jpg)
+
+4. The above command will create an SSH tunnel between your MobileApp VM and the virtual device in Corellium. The command also sets a *control socket* and binds the connection to `localhost:5001`. Now we can connect the Android Debug Bridge (adb) using the following command.
+
+`adb connect localhost:5001`
+
+![ADB Connection](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/adb-commands-1.jpg)
+
+5. With `adb` connected, we can run commands such as: 
+
+`adb devices` - List of devices attached
+`adb shell` - Shell acess to the Android device
+
+![ADB Commands](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/adb-commands-2.jpg)
+
+**NOTE:** There's a dedicated [lab](https://github.com/deruke/AndroidLabs/blob/main/Labs/adb/adb_cheatsheet/adb_cheatsheet.md) on utilizing adb and adb commands.
+
+6. Finally, to terminate the SSH tunnel run the following command.
+
+`ssh -Ssock -O exit proxy.corellium.com`
+
+![Terminate SSH Tunnel](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/ssh-terminate.jpg)
+
 
 ### VPN ###
 
