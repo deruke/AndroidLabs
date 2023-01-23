@@ -58,8 +58,15 @@ In this section we will cover two options for establishing remote network capabi
         - sshKey – this is your private key and should remain on your MobileApp VM.
         - sshKey.pub – this is your public certificate, the contents of which will need to be added to your Corellium instance.
 
+![ssh keypair](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/ssh-keypair.jpg)
+
 2. Type the following command to display the contents of sshKey.pub to stdout of your terminal.
 `cat sshKey.pub`
+
+![ssh public key](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/sshKey.pub-contents.jpg)
+
+3. From your Corellium account, navigate to **<Username>* -> Account**
+
 
 ### VPN ###
 
