@@ -1,3 +1,5 @@
+## TEMP NOTE: Should we first show an App that fails to trust the Burp cert in the user-store? Then at the very end of this lab, show that it now works. 
+
 # Importing Burp's CA Certificate to the System-Trust Store (Android) 
 In this lab we will import and install Burp's CA certificate to the System-Trust store of our virtual mobile device.
 
