@@ -61,11 +61,22 @@ In this section we will cover two options for establishing remote network capabi
 ![ssh keypair](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/ssh-keypair.jpg)
 
 2. Type the following command to display the contents of sshKey.pub to stdout of your terminal.
+
 `cat sshKey.pub`
 
 ![ssh public key](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/sshKey.pub-contents.jpg)
 
-3. From your Corellium account, navigate to **<Username>* -> Account**
+3. From your Corellium account, click the drop-down from your user account name and select **Account**
+
+![Account Settings](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/account-settings.jpg)
+
+4. Under the **Authorized Keys** section, click **NEW KEY**, then select **SSH** for the *Key Type*, and copy the contents of your ssh public key (step 2 above) and paste it in the text box here. Click **CREATE**.
+
+![Adding Authorized Key to Corellium](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/adding-public-key.jpg)
+
+**NOTE:** Be sure to add the entire contents of your public key - starting with *"ssh-ed25519..."* and ending with your hostname *"...mobileapp@mobileapp-vm"*. The full content of your SSH key will be different.
+
+#### Test the SSH Connection ####
 
 
 ### VPN ###
