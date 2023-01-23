@@ -99,6 +99,7 @@ In this section we will cover two options for establishing remote network capabi
 5. With `adb` connected, we can run commands such as: 
 
 `adb devices` - List of devices attached
+
 `adb shell` - Shell acess to the Android device
 
 ![ADB Commands](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/images/adb-commands-2.jpg)
