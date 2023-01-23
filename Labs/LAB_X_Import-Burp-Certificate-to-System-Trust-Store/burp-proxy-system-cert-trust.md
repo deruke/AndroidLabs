@@ -44,4 +44,37 @@ If you are using a different mobile device solution for testing, Android devivce
 ## Importing the CA to the mobile device's System-Trust Store - via adb
 
 1. Connect to your virtual mobile device via `abd`.
-**NOTE**: See [here]("") 
+
+![adb connect](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Import-Burp-Certificate-to-System-Trust-Store/images/adb-connect.jpg)
+
+**NOTE**: Reference [LAB_X](https://github.com/deruke/AndroidLabs/blob/main/Labs/adb/adb_cheatsheet/adb_cheatsheet.md) for connectivity and use of the Android Debug Bridge (adb).
+**NOTE**: The screen capture below is an example of the adb tool used to connect to the virtual mobile device with a VPN established between Corellium and the MobileApp VM. To establish a connection over SSH instead, please see the establishing an [SSH Connection](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/gettingstarted.md#SSH) section the [Getting Started Lab](https://github.com/deruke/AndroidLabs/blob/main/Labs/Corellium_Setup/gettingstarted.md).
+
+2. Copy the certificate to the device. We can use `adb` to copy the certificate over, but since it has to be copied to the `/system` filesystem, we have to remount it as writable. As root, we will remount and push the certificate to the local file system of the virtual mobile device.
+
+`adb root`
+`adb remount`
+`adb push <cert>.0 /sdcard/`
+
+![adb root](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Import-Burp-Certificate-to-System-Trust-Store/images/adb-as-root.jpg)
+
+3. Drop into a shell (`adb shell`) and move the file to `/system/etc/security/cacerts` and run the `chmod` command with permissions set to **644**:
+
+`adb shell`
+`mv /sdcard/9a5ba575.0 /system/etc/security/cacerts/`
+`chmod 644 /system/etc/security/cacerts/9a5ba575.0`
+
+4. Run the `ls` command to verify the correct permissions are set.
+
+`ls -lah /system/etc/security/cacerts/9a5ba575.0`
+
+![adb add cert and set permissions](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Import-Burp-Certificate-to-System-Trust-Store/images/adb-push-cert-to-system-1.jpg)
+
+5. Within the adb shell, run the `reboot` command and hit enter to reboot your virtual device.
+
+## Verify Certicate was added Successfully
+
+1. Return to your virtual device in Corellium and navigate to **Settings -> Security -> Encryption & credentials -> Trusted credentials -> System**. Then scroll down until you see *PortSwigger - PortSwiggerCA*.
+
+![Burp CA Certificate Installed in System Store](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Import-Burp-Certificate-to-System-Trust-Store/images/burp-cert-system-store.jpg)
+
