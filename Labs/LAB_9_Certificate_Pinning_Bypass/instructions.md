@@ -11,9 +11,10 @@ Log into the app, and then click on the "Contact John" button near the bottom of
 
 ![screenshot](images/step0.png)
 
-On the nect screen pressing the "Send beacon to John" button will yield an SSL error as shown below.
+On the nect screen pressing the "Send beacon to John" button will yield an error as shown below.
+![screenshot](images/errormsg.png)
 
-To bypass the certificate pinning we are going to use a frida script. The script located in this directory is a modified version of [this script](https://github.com/httptoolkit/frida-android-unpinning)
+To bypass the certificate pinning we are going to use a frida script. [this script](https://github.com/httptoolkit/frida-android-unpinning) will work, however you may find others that work as well.
 
 Instead of starting the process through the command line, this time we are going to connect to an already running process through Corellium. 
 
@@ -44,5 +45,12 @@ At this pint the script might throw an error about a counter, but don't worry, i
 
 Now if we click the "Send Beacon To John" Button again, we should get a different result.
 
-![screenshot](images/result.png)
+If done correctly, you should see something similar to the screenshot below.
+![screenshot](images/final.png)
+
+If you want to add some data to the request, you can do so through the burp proxy.
+
+![screenshot](images/request.png)
+
+You need a newline before the data, otherwise it will be interpreted as a header. Also don't forget the two newlines at the end!
 

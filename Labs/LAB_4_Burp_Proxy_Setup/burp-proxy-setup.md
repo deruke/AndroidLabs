@@ -12,11 +12,11 @@ In order to ensure network traffic is routed from the virtual mobile device to o
 
   Option 2: Launch Burp via the Favorites Toolbar.
 
-  ![Launch Burp Suite](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-temp-project-1.jpg)
+  ![Launch Burp Suite](images/burp-temp-project-1.jpg)
 
 2. Select **Temporary project**, then click **Next**
 
- ![Launch Burp Suite](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-temp-project.jpg)
+ ![Launch Burp Suite](images/burp-temp-project.jpg)
 
 3. Using Burp's menu items, navigate to **Proxy -> Options**
 
@@ -24,17 +24,17 @@ In order to ensure network traffic is routed from the virtual mobile device to o
 
 5. Next click **Add**, then **Bind to address -> Specific address**, and select the IP address assigned to the **tap0** interface. Also, enter the port number in the **Bind to port** field, then click **OK**.   
 
- ![Burp Proxy Configuration](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-configure-listener-1.jpg)
+ ![Burp Proxy Configuration](images/burp-configure-listener-1.jpg)
 
  NOTE: The address assigned to your **tap0** interface may be different. To ensure you select the correct IP for Burp to bind to, run the following command from a terminal session on your MobileApp VM.
  
  `ip a show tap0`
  
- ![tap0 interface](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/tap0-interface.jpg)
+ ![tap0 interface](images/tap0-interface.jpg)
 
  6. You should now have an active listener in Burp.
 
- ![Burp Proxy Configuration](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-proxy-options.jpg)
+ ![Burp Proxy Configuration](images/burp-proxy-options.jpg)
 
 You now have Burp's proxy setup and listening for incoming connections. In the next section of this lab, we will walk through the configuration of the virtual mobile device in Corellium.
 
@@ -44,43 +44,43 @@ You now have Burp's proxy setup and listening for incoming connections. In the n
 
 2. On the virtual mobile device, navigate to **Settings -> Network & internet**.
 
-![Network and Internet](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/internet-proxy-settings.jpg)
+![Network and Internet](images/internet-proxy-settings.jpg)
 
 3. Select **Internet**
 
-![Internet](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/internet-proxy-settings-1.jpg)
+![Internet](images/internet-proxy-settings-1.jpg)
 
 4. Click on the *gear* icon of the *T-Mobile* connection.
 
-![T-Mobile](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/internet-proxy-settings-2.jpg)
+![T-Mobile](images/internet-proxy-settings-2.jpg)
 
 5. Under the settings for the *T-Mobile* interface, scroll down and select **Access Point Names**
 
-![APN Select](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/apn-select.jpg)
+![APN Select](images/apn-select.jpg)
 
 6. Select the **T-Mobile US** APN.
 
-![APN Select](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/apn.jpg)
+![APN Select](images/apn.jpg)
 
 7. Click on the **Proxy** and **Port** fields and enter the value matching Burp's proxy settings. Then select the *Kebab* icon in the top-right corner and click **Save**.
 
 Kebab Icon Location:
 
-![APN Set](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/apn-proxy-save.jpg)
+![APN Set](images/apn-proxy-save.jpg)
 
 Click Save
 
-![APN Save](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/apn-save.jpg)
+![APN Save](images/apn-save.jpg)
 
 **IMPORTANT:** If you don't save the proxy settings you will need to repeat the previous step(s)
 
 9. Navigate back to **Settings -> Network & internet -> Internet** and select the icon at the top-right corner to reset the network interface. This will reset the virtual device's network interface which enables the proxy settings to be recognized by the device.
 
-![Reset Interface](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/reset-interfaces.jpg)
+![Reset Interface](images/reset-interfaces.jpg)
 
 The Internet connection will cycle momentarily during this process.
 
-![Interface Resetting](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/internet-reset-interfaces.jpg)
+![Interface Resetting](images/internet-reset-interfaces.jpg)
 
 
 ## Configure the Virtual Mobile Device's Certificate Trust for the Burp Proxy Certifcate Authority (CA) - User-Trust
@@ -91,75 +91,75 @@ The following steps will walk you through the installation of Burp's CA certific
 
 1. Return to your instance of Burp running on the MobileApp VM and navigate to: **Proxy -> Options** and click on **Import / export CA certificate**.
 
-![Export Burp CA Certificate](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-export-CA-cert.jpg)
+![Export Burp CA Certificate](images/burp-export-CA-cert.jpg)
 
 2. Select the **Certificate in DER format** and then click **Next**.
 
-![Export Burp CA as DER](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-export-cert-DER-format.jpg)
+![Export Burp CA as DER](images/burp-export-cert-DER-format.jpg)
 
 3. Select a location to save the certifcate.
 
-![Save Burp Certificate](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-export-cert-filename.jpg)
+![Save Burp Certificate](images/burp-export-cert-filename.jpg)
 
 4. Go back to your Corellium instance and click **Files** in the menu, then navigate to **/mnt/sdcard/Download/** and upload the Burp CA file exported in the previous step.
 
-![Upload Certificate to Device](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-CA-cert-upload.jpg)
+![Upload Certificate to Device](images/burp-CA-cert-upload.jpg)
 
-![Upload Certificate to Device](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/burp-CA-cert-upload-1.jpg)
+![Upload Certificate to Device](images/burp-CA-cert-upload-1.jpg)
 
 5. Return to the virtual mobile device's home screen (in Corellium) and select the **Settings** icon.
 
 Settings Icon:
 
-![Settings](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/settings-icon.jpg)
+![Settings](images/settings-icon.jpg)
 
 6. Scroll down and select **Security** then find **Encryption & credentials** and select it.
 
-![Security - Encryption and Credentials](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/security-settings-enc-creds.jpg)
+![Security - Encryption and Credentials](images/security-settings-enc-creds.jpg)
 
 7. Under **Encryption & credentials** click on **Install a certificate**, then click **CA certificate**
 
 Install a certificate:
 
-![Security - Encryption and Credentials](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/security-settings-cert-install.jpg)
+![Security - Encryption and Credentials](images/security-settings-cert-install.jpg)
 
 Install a certificate -> CA Certificate:
 
-![Install a CA certificate](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/cert-installed.jpg)
+![Install a CA certificate](images/cert-installed.jpg)
 
 8. A prompt will warn you of the dangers involved with installing a CA certificate...click **INSTALL ANYWAY** to proceed.
 
-![Install a CA certificate](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/security-settings-cert-install-1.jpg)
+![Install a CA certificate](images/security-settings-cert-install-1.jpg)
 
 9. Next, click the *Hamburger* icon and select **Downloads**, then click on the Burp certificate you uploaded in step 4.
 
-![Select Certificate from Downloads](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/security-settings-cert-install-2.jpg)
+![Select Certificate from Downloads](images/security-settings-cert-install-2.jpg)
 
-![Select Certificate from Downloads](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/security-settings-cert-install-3.jpg)
+![Select Certificate from Downloads](images/security-settings-cert-install-3.jpg)
 
-![Select Certificate from Downloads](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/security-settings-cert-install-4.jpg)
+![Select Certificate from Downloads](images/security-settings-cert-install-4.jpg)
 
 10. If successful, a temporary pop-up wil appear indicating *"CA certificate installed"*.
 
-![Select Certificate from Downloads](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/cert-installed-1.jpg)
+![Select Certificate from Downloads](images/cert-installed-1.jpg)
 
 11. To verify that the certifcate was installed to the User-Trust store, navigate to **Settings -> Security -> Encryption & credentials -> Trusted credentials -> User**
 
-![Certificate Trust](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/cert-installed-2.jpg)
+![Certificate Trust](images/cert-installed-2.jpg)
 
-![Certificate Trust](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/cert-installed-3.jpg)
+![Certificate Trust](images/cert-installed-3.jpg)
 
 12. Launch the Web View app from the virtual device in Corellium and enter a common Internet resource, such as *https://www.google.com*.
 
-![Web View](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/webview-icon.jpg)
+![Web View](images/webview-icon.jpg)
 
-![Google via Web View App](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/webview-google.jpg)
+![Google via Web View App](images/webview-google.jpg)
 
 13. Finally, navigate back to your MobileApp VM and from within Burp, navigate to **Proxy -> HTTP history**. 
 
 You should see your web traffic processed by Burp's proxy.
 
-![Burp Intercepted Web Traffic](https://github.com/deruke/AndroidLabs/blob/main/Labs/LAB_X_Burp-Proxy-Setup/images/webview-google-burp.jpg)
+![Burp Intercepted Web Traffic](images/webview-google-burp.jpg)
 
 ### Not seeing traffic in Burp?
 
