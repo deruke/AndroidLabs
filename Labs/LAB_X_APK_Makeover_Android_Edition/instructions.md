@@ -129,7 +129,7 @@ After modifying android_embedit.py, run it to see if everything works.
 
 ![](2023-02-09-14-07-07.png)
 
-Hooray! No errors. Before we get our hopes up though, let's make sure we can install the app with adb. Remember to verify that the connection is up to your Android device.
+Hooray! No errors. Next, try installing the app with adb.
 
 `adb devices`
 
@@ -137,47 +137,59 @@ Hooray! No errors. Before we get our hopes up though, let's make sure we can ins
 
 ![](2023-02-09-16-16-58.png)
 
-Well shoot. It looks like the app didn't install. If you search online for the error message, you'll come across a github issue in apktool's repo where this was a known problem. Some commenters experiences success by using zipalign after compilation. This author did not have luck in doing so. A more recent comment on the github issue hinted at using `apksigner` instead of `jarsigner`. Switching to `apksigner` was found to be effective. As a quick fix, we're going to change the sign method in android_embedit.py. Between line 161 and line 162, paste in the following code.
+Well shoot. It looks like the app didn't install. If you search online for the error message, you'll come across a github issue in apktool's repo where this was a known problem. Some commenters experiences success by using zipalign after compilation. This author did not have luck in doing so. A more recent comment on the github issue hinted at using `apksigner` instead of `jarsigner`. Switching to `apksigner` was found to be effective. As a quick fix, we're going to change the sign method in android_embedit.py. *Between* line 161 and line 162, paste in the following code.
 
 ```
-
+cmd = 'apksigner '
+cmd += 'sign --ks {0} '.format(ks)
+cmd += '--ks-pass pass:{0} '.format(kp)
+cmd += '{0}'.format(fp)
 ```
+![](2023-02-10-12-14-32.png)
 
-After doing so, your copy of 
+After doing so, your copy of android_embedity.py should look like this.
 
-TODO: Ensure that apksigner is installed in the VM
+![](2023-02-10-12-16-20.png)
 
+TODO: Ensure that PATH has Android Sdk platform-tools and build-tools
 
+The next step would be to attempt installing the app. However, at the time of writing this lab, the author was unable to get an APK, built on Linux, to install. If you look in your home directory, you'll see an APK file named, `app-release_with_msf.apk`. `app-release_with_msf.apk` was built using the exact same script, commands, and build tools. The only difference is that it was built on a macOS host. Why does this install work and not the other one? ¯\\_(ツ)_/¯
 
-## Checkpoint #3: Decompile, Build, Sign, then Install
+Welcome to the world of mobile app security testing! :)
 
-From reviewing the `sign` method in android_embedit.py, we can see at line 158 that `jarsigner` is used to sign the backdoored APK.
-
-![](2023-02-09-11-53-06.png)
-
-If we wanted to run the same command from bash, it would look something like this:
-
-`jarsigner -verbose -keystore $KEYSTORE -storepass $KEYSTORE_PASSWORD -digestalg SHA1 -sigalg SHA1withRSA $FINAL_APK $KEY_NAME`
-
-TODO: Include a keystore file for this step
-
-On your VM, there's a keystore named, "signcheck.keystore". The keystore password is "signcheck" and the key name is "key". Let's see what happens when we try to sign the APK using the key in this keystore.
-
-## Tweak android_embedit.py and Re-run It
-
-
-
-## Other Issues You May Encounter
-
-
-
-## Analyze Backdoored APK with MobSF
-
-
+For the purposes of this lab, the APK that we built is useful as we can still analyze it with MobSF. Go ahead and drag the APK that we built into MobSF's UI to start analyzing it.
 
 ## Compare the MobSF Analyses
 
+Once MobSF has finished analyzing the backdoored APK, we can use MobSF's compare analyses feature to quickly spot some key differences between the original and backdoored APK. Once the analysis of the backdoored APK has completed, the browser will be redirected to a static analysis of the backdoored APK. From here, click on the "Recent Scans" tab in the UI.
 
+![](2023-02-10-13-51-36.png)
+
+This should take you to a page that looks similar to below.
+
+![](2023-02-10-13-54-32.png)
+
+From here, the one significant difference that stands out is the hash of each APK. Next, click on the "Diff or compare" button to compare the scans. It doesn't matter which one you click. Either will do. When you see the "Select an application" notification, click the "OK" button. You should see one APK is highlighted in green. Click on the APK that is not highlighted to start the comparison. You will see another confirmation window similar to below. Click the "Start Diffing!" button.
+
+![](2023-02-10-13-59-29.png)
+
+The comparison should complete almost instantly as MobSF is essentially pulling data from its database and presenting it through the UI. If you were to install and run the apps on a device, there would be very little, if anything, to indicate that the APK had been tampered with. The comparison in MobSF paints a very different picture though. Take a look at the "Permission Summary" tile, for example. The backdoored APK has 20 permissions that were not in the original APK.
+
+![](2023-02-10-14-05-17.png)
+
+As a mobile security tester, you are often making judgement calls as to whether or not permissions are reasonable and/or appropriate based on the purpose and functionality included in the app. When looking at the permissions in the backdoored APK though, there are some permissions that just don't make sense for a mobile banking app. See `android.permissions.WRITE_SETTINGS` which allows the app to "modify global settings."
+
+![](2023-02-10-14-08-29.png)
+
+The same reasonableness test can be applied to the Android APIs used by the app. The first column in the figure below shows the Android APIs that both the apps used. The second column has Android APIs that were only seen in the backdoored app. The third column is a list of Android APIs that were only seen in the original APK. It makes sense that the third column is empty because the backdoor was an addition to the original APK. That is, no APIs were removed from the original APK.
+
+![](2023-02-10-14-15-07.png)
+
+By going through this lab, you were introduced to one of the things that makes mobile app security testing challenging. The technology stack for mobile devices is continuously changing. A testing technique that works today may no longer work six months down the road.
+
+It is also very common to run into issues like what we saw with android_embedit.py where a couple minor tweaks to an existing tool will get the job done. Being able to work through these challenges in a methodical manner will enable you to be a more successful mobile app security tester.
+
+If your responsibilities lie within the realm of incident response or digital forensics, we hope that the last portion of this lab presented you with some new ideas for analyzing malicious APKs.
 
 ## References:
 
