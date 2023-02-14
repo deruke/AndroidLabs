@@ -28,6 +28,8 @@ In our case, the exact parameters are:
 
 `sudo docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest`
 
+now navigate to localhost:8000 and click "Upload and Analyze", and upload an APK file. Processing the APK file will take a while, so let that keep running in the background as we will use it for future labs.
+
 ## Analyzing other apps
 You can also test out any app youd like from the playstore. To do this you will need to install OpenGApps. This will give you access to the google playstore. This can be done from the "Apps" tab in Corellium.
 ![](images/ss3.png)
