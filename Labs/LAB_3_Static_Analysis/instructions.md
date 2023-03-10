@@ -1,7 +1,4 @@
 # Static Analysis with MobSF #
-
-## Note: Students should probably upload the file they want to analyze an hour or two before doing this lab. MobSF takes a good bit of time.
-
 In this lab we will be using MobSF to analyze an APK. You can also use the app uploaded for analysis in the "APK_Extraction" lab, or look at one of the pre-generated reports in the course materials section. As an example we will be using the TikTok app. You are encouraged to repeat this analysis using TheHackerBank app. Your goal is to analyze ther results and note down anything that stands out for later use.
 
 The first thing worth paying special attention to is the overview of the app components.
@@ -22,7 +19,7 @@ The reconnaissance section is especially useful for gaining a better overall und
 
 Next we can also look at strings. Android best practices recommend that instead of hardcoding strings into the XML (UI) files, they be inserted as a key value pairs into the "Strings.xml" file and referenced by the layout files. This creates a lot of noise and looking through everything is not likely to be a good use of time.
 
-MobSF extracts potentially sensitive values from this file and displays them in the "Hardcoded Secrets" tab. The information found here should be verified by the tester.
+MobSF extracts potentially sensitive values from this file and displays them in the "Hardcoded Secrets" tab. You should verify the information displayed in this section is actually sensitive before reporting it.
 
 ![](images/secrets.png)
 
