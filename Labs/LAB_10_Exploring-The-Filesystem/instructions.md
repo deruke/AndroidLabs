@@ -31,3 +31,6 @@ After that you're on your won for analysis.
 For example: `grep -InrE pass|key|token|api|cred|auth|cookie` might be a good place to start.
 
 additionally, the application may use external storage. You might have noticed The Hacker Bank does not have the WRITE_EXTERNAL_STORAGE permission declared in the manifest file. The app does however write to external storage. Since android 10, android uses a "Scoped Storage" model. Can you figure out where those "Check Deposit" images go?
+
+## Extra Credit ##
+You have root on the device and can browse data data for any of the applications. Look through the file system for another app of your choice.
