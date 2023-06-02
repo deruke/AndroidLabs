@@ -36,7 +36,7 @@ We can also pass data when starting intents with ADB. For example, running the b
 
 `adb shell am start -n com.bhis.thehackerbank/.AccountDetails --es "USER_COOKIE" "nothinginparticular"`
 
-When executed correctly, the app will behave slightly differently.
+When executed correctly, the app will behave slightly differently.<br>
 ![Redacted v2](images/redacted2.png)
 
 The command above requires us to know the name of the intent extra. These can be found by looking at the source code in a program such as jadx.
