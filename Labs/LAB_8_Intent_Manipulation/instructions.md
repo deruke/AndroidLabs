@@ -6,7 +6,7 @@ An "intent" is a "message object" typically used communicate between different a
 
 Sometimes however, intents can be sent between applications. A legitimate example of this might be your camera accepting an intent from your banking app in order to take a photo of a check.
 
-By analyzing the manifest file of our app, we noticed the following activity is exported.
+By analyzing the <a href="https://www.blackhillsinfosec.com/field-guide-to-the-android-manifest-file/">manifest file</a> of our app, we noticed the following activity is exported.
 ```xml
 <activity
     android:name=".AccountDetails"
