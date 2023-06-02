@@ -6,7 +6,7 @@ The target application is `Hacker Bank Mobile`, which is installed on your corel
 Opening the app we see that we do not have the option to do anything other than aknowledge the alert, which consequently closes the application.
 ![screenshot](images/ss0.png)
 
-<span style="background-color: #FFFF00">**The following Commands are for reference only and do not need to be run on the Corellium device since it has the frida server pre-installed.**</span>
+**The following Commands are for reference only and do not need to be run on the Corellium device since it has the frida server pre-installed.**
 
 Typically, we would need to upload and start the Frida server on the device we are testing. That can be accomplished by restarting adb as root, and running the following commands:
 
