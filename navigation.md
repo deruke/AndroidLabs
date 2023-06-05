@@ -15,6 +15,8 @@
   - [10 - Exploring the Filesystem](/Labs/LAB_10_Exploring-The-Filesystem/instructions.md)
   - [11 - Objection](/Labs/LAB_11_Objection/instructions.md)
   - 12 - Detecting front end and backend frameworks
+  - 13 - API Investigation
+  - 14 - Log Analysis
   - [X - APK Makeover Android Edition ](/Labs/LAB_X_APK_Makeover_Android_Edition/instructions.md)
 
 
