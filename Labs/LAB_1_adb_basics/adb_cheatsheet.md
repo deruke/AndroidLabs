@@ -4,6 +4,7 @@ This lab will familiarize you with a mobile app testing tool that is indispensib
 The first step will be to connect to your Android device in Correllium with adb. If you have a local Android device (i.e. plugged directly into your testing system), you generally don't need to perform this step. However, since our Android device is hosted in the cloud, we'll need to take advantage of adb's TCP connection feature to remotely access the device.
 
 Enusre that your SSH tunnel is up with the following command.
+<img width="734" alt="Screenshot 2023-12-27 at 12 34 12 PM" src="https://github.com/deruke/AndroidLabs/assets/22796374/9699aab2-cc45-459b-a691-a5c81668c74f">
 
 `netstat -lntp | grep ssh`
 
