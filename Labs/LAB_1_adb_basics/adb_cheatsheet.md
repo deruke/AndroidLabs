@@ -5,7 +5,6 @@ The first step will be to connect to your Android device in Correllium with adb.
 
 Enusre that your SSH tunnel is up with the following command.
 
-<img width="734" alt="Screenshot 2023-12-27 at 12 34 12 PM" src="https://github.com/deruke/AndroidLabs/assets/22796374/9699aab2-cc45-459b-a691-a5c81668c74f">
 
 `netstat -lntp | grep ssh`
 
