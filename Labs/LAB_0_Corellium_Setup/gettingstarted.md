@@ -139,6 +139,7 @@ An alternative approach to SSH for remote connectivity is to use a VPN. Corelliu
 ![Download OVPN File](images/download-openvpn.jpg)
 
 3. Save the downloaded OVPN file to a directory/location on the MobileApp VM.
+<img width="582" alt="Screenshot 2023-12-30 at 11 20 51 AM" src="https://github.com/deruke/AndroidLabs/assets/22796374/4d376964-ea1f-4e00-9e28-5e6581e4b87e">
 
 ![Downloaded OVPN File](images/openvpn-local.jpg)
 
