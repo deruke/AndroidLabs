@@ -43,7 +43,11 @@ When penetration testing mobile apps, it is possible that you will receive the A
 *** PLACEHOLDER: F-Droid is just a placeholder *** 
 
 ```
-adb install
+wget https://f-droid.org/F-Droid.apk
+```
+
+```
+adb install F-Droid.apk
 ```
 ![](2023-01-13-15-49-43.png)
 
