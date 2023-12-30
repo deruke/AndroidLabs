@@ -6,11 +6,7 @@ In order to ensure network traffic is routed from the virtual mobile device to o
 ## Open and Configure Burp
 1. With a VPN connection established, return to your MobileApp VM and launch Burp Suite Community Edition by either running to following command or clicking on the Burp icon in the Favorites Toolbar.
  
-  Option 1: Launch Burp via the command line.
-   
-  `/home/mobileapp/BurpSuiteCommunity/BurpSuiteCommunity &`
-
-  Option 2: Launch Burp via the Favorites Toolbar.
+ Launch Burp via the Favorites Toolbar.
 
   ![Launch Burp Suite](images/burp-temp-project-1.jpg)
 
