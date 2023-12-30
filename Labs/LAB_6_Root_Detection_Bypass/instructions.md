@@ -19,8 +19,14 @@ Now let's install the application on our phone.
 
 <img width="441" alt="Screenshot 2023-12-30 at 1 59 47 PM" src="https://github.com/deruke/AndroidLabs/assets/22796374/7ce9d5b5-412b-4366-b9ea-aebd439cf272">
 
+Next, let's install the app on our phone by pushing it through adb.
 
-Opening the app we see that we do not have the option to do anything other than aknowledge the alert, which consequently closes the application.
+```adb install final.apk```
+
+<img width="315" alt="Screenshot 2023-12-30 at 2 05 02 PM" src="https://github.com/deruke/AndroidLabs/assets/22796374/421c3f57-5dca-48d6-a596-294ed2c58f12">
+
+
+Opening the app on your phone we see that we do not have the option to do anything other than aknowledge the alert, which consequently closes the application.
 ![screenshot](images/ss0.png)
 
 **The following Commands are for reference only and do not need to be run on the Corellium device since it has the frida server pre-installed.**
