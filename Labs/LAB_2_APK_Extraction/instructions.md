@@ -6,22 +6,24 @@ Make sure you ran the ssh command under the "Connect" tab on corellium:
 Then make sure you are connected to the emulator through adb:
 `adb connect localhost:5001`
 
-The first thing you will need is the application ID of the app we are testing. We will be analyzing Mountain Project. On the Corellium interface click on the “Apps” tab and start typing the name of the application. The application ID is found directly under the application name as shown below. 
-![](images/ss1.png)
+The first thing you will need is the application ID of the app we are testing. We will be analyzing F-Droid. On the Corellium interface click on the “Apps” tab and start typing the name of the application. The application ID is found directly under the application name as shown below. 
+<!--![](images/ss1.png)-->
+<img width="836" alt="Screenshot 2023-12-30 at 11 37 38 AM" src="https://github.com/deruke/AndroidLabs/assets/22796374/c5f900b2-2ca2-4eb7-afc2-bfe2552ab56c">
+
 
 To download the APK from the device you will need the applications full path. To get it, connect to the the emulator via adb `adb connect localhost:5001` and run the following command:
 
-`adb shell pm path com.mountainproject.android`
+`adb shell pm path org.fdroid.fdroid`
 
 Copy the line in the output that ends in `base.apk` as shown below:
-![](images/ss2.png)
+<!--![](images/ss2.png)-->
+
+<img width="623" alt="Screenshot 2023-12-30 at 11 41 07 AM" src="https://github.com/deruke/AndroidLabs/assets/22796374/d8865205-329c-4eb1-ad2a-a060d3764f06">
+
 
 next, we fun the final command:
 `adb pull <PATH_TO_APP> <OUTFILE_NAME>`
 
-In our case, the exact parameters are:
-
-`adb pull /data/app/~~vJdcNyAeE0i3DZCorKC49g==/com.mountainproject.android-dhw5eoYTvYsbZbF_1TfNbA==/base.apk`
 
 ## Running MobSF
 [MobSF](https://mobsf.github.io/docs/#/) is already installed on your VM. To run the docker container, run the command:
