@@ -1,4 +1,11 @@
 # Become an `adb` Ninja #
+
+I CANNOT STRESS THIS ENOUGH!!!!!!
+
+REMEMBER TO POWER OFF YOUR VM WHEN NOT WORKING ON LABS!!!!
+
+Corellium WILL CHARGE YOU!!!!!
+
 This lab will familiarize you with a mobile app testing tool that is indispensible for Anrdoid testing, Android Debug Bridge (adb). You will exercise some of the most common features of adb such as gaining shell access to an Android device, moving files, installing APKs, and monitoring the system logger.
 
 The first step will be to connect to your Android device in Correllium with adb. If you have a local Android device (i.e. plugged directly into your testing system), you generally don't need to perform this step. However, since our Android device is hosted in the cloud, we'll need to take advantage of adb's TCP connection feature to remotely access the device.
