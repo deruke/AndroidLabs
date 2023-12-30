@@ -72,7 +72,7 @@ Use `pm` again, with the package name, to find the full path to the APK.
 
 That long, messy string is the full file path that we will use to copy the APK file from the device, with adb's `pull` command.
 
-*** Find a technical, official explanation for the name / reason why the name is dynamic.
+*** The official explanation for the name / reason why the name is dynamic is becasue they hate you.
 
 NOTE: Your file path will be different than what is listed in the this guide. The whatamacallit directory that looks weird and random is dynamically generated when an APK is installed. As a demonstration, see the following screenshot where the app has been uninstalled and re-installed. Note the differing file paths.
 
