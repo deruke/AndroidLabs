@@ -1,5 +1,12 @@
 # Setup Corellium and Establish Remote Connections
 Corellium URL: https://app.corellium.com/login
+
+I CANNOT STRESS THIS ENOUGH!!!!!!
+
+REMEMBER TO POWER OFF YOUR VM WHEN NOT WORKING ON LABS!!!!
+
+Corellium WILL CHARGE YOU!!!!!
+
 ## Creating an Android Device in Corellium
 Login to your Corellium account and select the **DEVICES** tab and click **CREATE DEVICE**.
 
