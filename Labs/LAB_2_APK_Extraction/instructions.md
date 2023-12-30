@@ -1,4 +1,11 @@
 # Extracting an APK for static analysis
+
+I CANNOT STRESS THIS ENOUGH!!!!!!
+
+REMEMBER TO POWER OFF YOUR VM WHEN NOT WORKING ON LABS!!!!
+
+Corellium WILL CHARGE YOU!!!!!
+
 ## Downloading the APK
 Make sure you ran the ssh command under the "Connect" tab on corellium:
 `ssh -M -Ssock -N -f -L 5001:<device-address>:5001 <device-id>@proxy.corellium.com`
