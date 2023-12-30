@@ -24,6 +24,8 @@ Copy the line in the output that ends in `base.apk` as shown below:
 next, we fun the final command:
 `adb pull <PATH_TO_APP> <OUTFILE_NAME>`
 
+<img width="730" alt="Screenshot 2023-12-30 at 11 44 45 AM" src="https://github.com/deruke/AndroidLabs/assets/22796374/6bea4968-044b-417f-8fa1-f83299afe311">
+
 
 ## Running MobSF
 [MobSF](https://mobsf.github.io/docs/#/) is already installed on your VM. To run the docker container, run the command:
