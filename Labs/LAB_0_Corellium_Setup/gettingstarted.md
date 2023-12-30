@@ -12,11 +12,12 @@ Next, select "Default Project."
 <img width="910" alt="Screenshot 2023-12-30 at 10 52 29 AM" src="https://github.com/deruke/AndroidLabs/assets/22796374/67d2694b-e496-4788-bb53-61e7824f31cf">
 
 
-Next, select **ANDROID -> Generic Android** and select **NEXT**
+Next, select **ANDROID -> Generic Android** and select it.
 
-![Create an Android Device](images/create-android-device.jpg)
+<!--![Create an Android Device](images/create-android-device.jpg)-->
 
 
+<img width="830" alt="Screenshot 2023-12-30 at 10 54 52 AM" src="https://github.com/deruke/AndroidLabs/assets/22796374/d94950ec-c6c2-4944-a65b-233b824dd195">
 
 Select the firmware package, **12.0.0 (Build r26 userdebug)**, from the dropdown menu and click **SELECT**.
 
