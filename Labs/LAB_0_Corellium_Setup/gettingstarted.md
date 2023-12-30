@@ -7,6 +7,9 @@ Login to your Corellium account and select the **DEVICES** tab and click **CREAT
 
 <img width="477" alt="Screenshot 2023-12-30 at 10 42 47 AM" src="https://github.com/deruke/AndroidLabs/assets/22796374/ba7e60ac-d8e5-4115-8772-b8b9511e5267">
 
+Next, select "Default Project."
+
+<img width="910" alt="Screenshot 2023-12-30 at 10 52 29 AM" src="https://github.com/deruke/AndroidLabs/assets/22796374/67d2694b-e496-4788-bb53-61e7824f31cf">
 
 
 Next, select **ANDROID -> Generic Android** and select **NEXT**
