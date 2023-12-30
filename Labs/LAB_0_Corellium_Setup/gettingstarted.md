@@ -163,7 +163,7 @@ An alternative approach to SSH for remote connectivity is to use a VPN. Corelliu
 
 **NOTE**: The IP address assigned to the tap0 interface may be different. <ins>Additionally, each time the VPN is established there is a possibility that the assigned IP may change</ins>.
 
-6. Run the `ip` command once again to see the tap0 interface and the currently assigned IP address.
+6. Run the `ip` command once again from a different terminal to see the tap0 interface and the currently assigned IP address.
 
 `ip a`
 
