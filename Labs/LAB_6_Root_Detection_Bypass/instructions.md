@@ -9,6 +9,17 @@ From the terminal run the following to download the app.
 
 ```wget <INSERT URL HERE>```
 
+We also need to ensure the VPN is up and running.
+
+<img width="637" alt="Screenshot 2023-12-30 at 1 57 21 PM" src="https://github.com/deruke/AndroidLabs/assets/22796374/abc319aa-b287-4113-974c-6d8b37c646a6">
+
+Now let's install the application on our phone.
+
+`adb connect localhost:5001`
+
+<img width="441" alt="Screenshot 2023-12-30 at 1 59 47 PM" src="https://github.com/deruke/AndroidLabs/assets/22796374/7ce9d5b5-412b-4366-b9ea-aebd439cf272">
+
+
 Opening the app we see that we do not have the option to do anything other than aknowledge the alert, which consequently closes the application.
 ![screenshot](images/ss0.png)
 
