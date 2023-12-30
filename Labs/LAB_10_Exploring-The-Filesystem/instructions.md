@@ -1,5 +1,11 @@
 # Exploring The Filesystem #
 
+I CANNOT STRESS THIS ENOUGH!!!!!!
+
+REMEMBER TO POWER OFF YOUR VM WHEN NOT WORKING ON LABS!!!!
+
+Corellium WILL CHARGE YOU!!!!!
+
 In this lab, we are going to investigate the file system of the application TheHackerBank.
 
 **Note:** This is most effective after you have browsed through the functionality of the app, since it is likely that things get written to the filesystem during runtime.
