@@ -9,6 +9,8 @@ Next, select **ANDROID -> Generic Android** and select **NEXT**
 
 ![Create an Android Device](images/create-android-device.jpg)
 
+<img width="477" alt="Screenshot 2023-12-30 at 10 42 47 AM" src="https://github.com/deruke/AndroidLabs/assets/22796374/ba7e60ac-d8e5-4115-8772-b8b9511e5267">
+
 Select the firmware package, **12.0.0 (Build r26 userdebug)**, from the dropdown menu and click **SELECT**.
 
 ![Firmware Package](images/android-firmware-package.jpg) 
