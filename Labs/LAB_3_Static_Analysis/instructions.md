@@ -7,7 +7,7 @@ In your VM web browser open a tab to http://0.0.0.0:8000
 
 Next, lets Upload and Analyze a file.
 
-<img width="1131" alt="Screenshot 2023-12-30 at 11 53 14 AM" src="https://github.com/deruke/AndroidLabs/assets/22796374/8ebe0d54-68ab-45eb-a602-d3124ace4846">
+<img width="1426" alt="Screenshot 2023-12-30 at 11 53 30 AM" src="https://github.com/deruke/AndroidLabs/assets/22796374/2bba5969-4694-4ddc-b304-ce717c7a3f1a">
 
 Please select base.apk in your home directory.
 
