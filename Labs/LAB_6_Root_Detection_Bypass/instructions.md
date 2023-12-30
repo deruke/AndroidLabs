@@ -1,4 +1,11 @@
 ## Bypassing Root Detection using Frida
+
+I CANNOT STRESS THIS ENOUGH!!!!!!
+
+REMEMBER TO POWER OFF YOUR VM WHEN NOT WORKING ON LABS!!!!
+
+Corellium WILL CHARGE YOU!!!!!
+
 There are two potential methods of bypassing root detection, statically, by removing the relevant code and recompiling the apk, or dynamically.
 In this lab, we will bypass the root detection at runtime using Frida.
 The target application is `Hacker Bank Mobile`.
