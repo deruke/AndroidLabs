@@ -1,5 +1,5 @@
 # Static Analysis with MobSF #
-In this lab we will be using MobSF to analyze an APK. You can also use the app uploaded for analysis in the "APK_Extraction" lab, or look at one of the pre-generated reports in the course materials section. As an example we will be using the TikTok app. You are encouraged to repeat this analysis using TheHackerBank app. Your goal is to analyze ther results and note down anything that stands out for later use.
+In this lab we will be using MobSF to analyze an APK. You can also use the app uploaded for analysis in the "APK_Extraction" lab, or look at one of the pre-generated reports in the course materials section. As an example we will be using the F-Droid app. You are encouraged to repeat this analysis using TheHackerBank app later in the class. Your goal is to analyze ther results and note down anything that stands out for later use.
 
 The first thing worth paying special attention to is the overview of the app components.
 ![](images/exported.png)
