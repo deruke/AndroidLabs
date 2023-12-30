@@ -1,6 +1,16 @@
 # Static Analysis with MobSF #
 In this lab we will be using MobSF to analyze an APK. You can also use the app uploaded for analysis in the "APK_Extraction" lab, or look at one of the pre-generated reports in the course materials section. As an example we will be using the F-Droid app. You are encouraged to repeat this analysis using TheHackerBank app later in the class. Your goal is to analyze ther results and note down anything that stands out for later use.
 
+Let's load up an app and look at it.
+
+In your VM web browser open a tab to http://0.0.0.0:8000
+
+Next, lets Upload and Analyze a file.
+
+<img width="1131" alt="Screenshot 2023-12-30 at 11 53 14 AM" src="https://github.com/deruke/AndroidLabs/assets/22796374/8ebe0d54-68ab-45eb-a602-d3124ace4846">
+
+Please select base.apk in your home directory.
+
 The first thing worth paying special attention to is the overview of the app components.
 ![](images/exported.png)
 Specifically, the "exported" activities, services, receivers, and providers. The exported keyboard means they can be launched from outside the app and may present additional entry points or other attack vectors. We can further analyze the exported components by looking at the manifest file, and if necessary the decompiled code.
