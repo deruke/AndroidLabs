@@ -78,11 +78,12 @@ In this section we will cover two options for establishing remote network capabi
 
 ![ssh public key](images/sshKey.pub-contents.jpg)
 
-3. From your Corellium account, click the drop-down from your user account name and select **Account**
+3. From your Corellium account select "Connect". Then select Admin page at the bottom red box of the "Quick Connect" section.
+   
+<img width="920" alt="Screenshot 2023-12-30 at 11 10 20 AM" src="https://github.com/deruke/AndroidLabs/assets/22796374/de07456b-3ade-4086-9be1-eff60e16ca4e">
 
-![Account Settings](images/account-settings.jpg)
 
-4. Under the **Authorized Keys** section, click **NEW KEY**, then select **SSH** for the *Key Type*, and copy the contents of your ssh public key (step 2 above) and paste it in the text box here. Click **CREATE**.
+5. Under the **Authorized Keys** section, click **NEW KEY**, then select **SSH** for the *Key Type*, and copy the contents of your ssh public key (step 2 above) and paste it in the text box here. Click **CREATE**.
 
 ![Adding Authorized Key to Corellium](images/adding-public-key.jpg)
 
