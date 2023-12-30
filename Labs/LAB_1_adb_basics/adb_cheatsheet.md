@@ -40,11 +40,16 @@ adb shell pm list packages | grep key
 
 When penetration testing mobile apps, it is possible that you will receive the APK files outside of the Google Play store, as a stand-alone APK file. In which case, you will likely use adb to install the app. This is easily accomplished with adb's install command. After installing the app, you can use adb shell to find the package name after the APK is installed.
 
-*** PLACEHOLDER: F-Droid is just a placeholder *** 
+*** Installing third-party apps *** 
+
+Let's play with a third-party app called F-Droid.  Often times you will be given a .apk file to test.  This will walk through how to install those apps outside of the Google Play Store.
+
+First, let's download it.
 
 ```
 wget https://f-droid.org/F-Droid.apk
 ```
+Next, let's install it.
 
 ```
 adb install F-Droid.apk
