@@ -1,4 +1,11 @@
  # Importing Burp's CA Certificate to the System-Trust Store (Android) 
+
+I CANNOT STRESS THIS ENOUGH!!!!!!
+
+REMEMBER TO POWER OFF YOUR VM WHEN NOT WORKING ON LABS!!!!
+
+Corellium WILL CHARGE YOU!!!!!
+ 
 In this lab we will import and install Burp's CA certificate to the System-Trust store of our virtual mobile device.
 
 **NOTE**: The mobile device must be rooted in order to install a CA certificate to the System-Trust store. We'll be utilzing a rooted Android device in Corellium for this lab.
