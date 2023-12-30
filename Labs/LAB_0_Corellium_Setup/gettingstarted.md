@@ -35,6 +35,8 @@ Once the build is complete, you should have a virtual Android device with menu o
 
 ![Android 12 - Rooted](images/android-12-device-rooted.jpg)
 
+Please note, if it does not say "Rooted" it is becasue you did not select userdebug.  Please click the trachcan icon, delete the device and start over.
+
 ## Navigating Menu Items in Corellium ##
 
 The menu items associated with your Android device should look like the following.
