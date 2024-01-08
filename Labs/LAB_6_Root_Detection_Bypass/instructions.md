@@ -14,7 +14,7 @@ Let's install that app now.
 
 From the terminal run the following to download the app.
 
-```wget <INSERT URL HERE>```
+```wget https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/final.apk```
 
 We also need to ensure the VPN is up and running.
 
