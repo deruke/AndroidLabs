@@ -67,13 +67,14 @@ If you are using a different mobile device solution for testing, Android devivce
 
 3. Drop into a shell (`adb shell`) and move the file to `/system/etc/security/cacerts` and run the `chmod` command with permissions set to **644**:
 
-`adb shell`
-`mv /sdcard/9a5ba575.0 /system/etc/security/cacerts/`
-`chmod 644 /system/etc/security/cacerts/9a5ba575.0`
+
+`adb shell mv /sdcard/9a5ba575.0 /system/etc/security/cacerts/`
+
+`adb shell chmod 644 /system/etc/security/cacerts/9a5ba575.0`
 
 4. Run the `ls` command to verify the correct permissions are set.
 
-`ls -lah /system/etc/security/cacerts/9a5ba575.0`
+`adb shell ls -lah /system/etc/security/cacerts/9a5ba575.0`
 
 ![adb add cert and set permissions](images/adb-push-cert-to-system-1.jpg)
 
