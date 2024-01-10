@@ -12,9 +12,9 @@ The target application is `Hacker Bank Mobile`.
 
 Let's install that app now.
 
-From the terminal run the following to download the app.
+Please download the following file.
 
-```wget https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/final.apk```
+```https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/final.apk```
 
 We also need to ensure the VPN is up and running.
 
