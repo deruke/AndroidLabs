@@ -22,9 +22,10 @@ We also need to ensure the VPN is up and running.
 
 Now let's install the application on our phone.
 
-`adb connect localhost:5001`
+First, lets connect via adb.
 
-<img width="441" alt="Screenshot 2023-12-30 at 1 59 47 PM" src="https://github.com/deruke/AndroidLabs/assets/22796374/7ce9d5b5-412b-4366-b9ea-aebd439cf272">
+`adb connect 10.11.1.1:5001 `
+
 
 Next, let's install the app on our phone by pushing it through adb.
 
